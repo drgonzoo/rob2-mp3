@@ -1,7 +1,7 @@
 {
     "name": "dfplayer",
     "version": "0.0.2",
-    "description": "DFPlayer mini und Serialmp3 Extension for Makecode",
+    "description": "DFPlayer mini and Serialmp3 Extension for Makecode",
     "license": "MIT",
     "dependencies": {
         "core": "*"
