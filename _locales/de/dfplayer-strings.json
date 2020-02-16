@@ -1,0 +1,17 @@
+{
+    "dfplayer|block": "MP3seriell",
+    "dfplayer.playType.type1|block": "Abspielen",
+    "dfplayer.playType.type2|block": "Stopp",
+    "dfplayer.playType.type3|block": "Nächster Titel",
+    "dfplayer.playType.type4|block": "Vorheriger Titel",
+    "dfplayer.playType.type5|block": "Pause",
+    "dfplayer.yesOrNot.type1|block": "Nein",
+    "dfplayer.yesOrNot.type2|block": "Ja",
+    "dfplayer.MP3_setSerial|block": "verbinde MP3-Player mit RX an %pinRX|und TX an %pinTX",
+    "dfplayer.execute|block": "führe Befehl aus：%myType",
+    "dfplayer.setTracking|block": "spiele MP3-Titel %tracking|Wiederholung：%myAns",
+    "dfplayer.folderPlay|block": "spiele MP3 im Verzeichnis %folderNum| den MP3-Titel%fileNum|　Wiederholung：%myAns",
+    "dfplayer.setLoop|block": "wiederhole alle MP3-Titel der SD-Karte endlos",
+    "dfplayer.setLoopFolder|block": "wiederhole alle MP3-Titel im Verzeichnis %folderNum| endlos",
+    "dfplayer.setVolume|block": "setze Lautstärke (0~48):%volume"
+}
