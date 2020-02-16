@@ -1,7 +1,7 @@
 {
     "name": "dfplayer",
-    "version": "0.0.1",
-    "description": "這是DFPlayer mini的Makecode專用積木",
+    "version": "0.0.2",
+    "description": "DFPlayer mini und Serialmp3 Extension for Makecode",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -9,7 +9,8 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/dfplayer-strings.json"
+        "_locales/zh/dfplayer-strings.json",
+        "_locales/de/dfplayer-strings.json"
     ],
     "public": true
 }
