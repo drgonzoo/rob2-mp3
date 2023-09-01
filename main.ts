@@ -19,7 +19,7 @@ namespace robplayer {
     let lowByte=0x00
     let dataArr: number[] = [Start_Byte, Version_Byte, Command_Length, CMD, Acknowledge, para1, para2, highByte, lowByte, End_Byte]
 
-    export enum playType {
+    export enum xx_playType {
         //% block="xx_Play"
         type1 = 0x0D,
         //% block="xx_Stop"
@@ -32,7 +32,7 @@ namespace robplayer {
         type5 = 0x0E
     }
 
-    export enum yesOrNot {
+    export enum xx_yesOrNot {
         //% block="xx_no"
         type1 = 0,
         //% block="xx_yes"
@@ -63,7 +63,7 @@ namespace robplayer {
     }
     //% blockId="xx_execute" block="xx_execute procedure:%myType"
     //% weight=90 blockExternalInputs=true blockGap=20
-    export function execute(myType: playType):void{
+    export function xx_execute(myType: xx_playType):void{
         CMD=myType
         para1=0x00
         para2=0x00
@@ -76,7 +76,7 @@ namespace robplayer {
 
     //% blockId="xx_setTracking" block="xx_play the mp3 on the track:%tracking|repeat:%myAns"
     //% weight=85 blockGap=20 tracking.min=1 tracking.max=255
-    export function setTracking(tracking:number,myAns:yesOrNot):void{
+    export function xx_setTracking(tracking:number,myAns:xx_yesOrNot):void{
         CMD=0x03
         para1=0x00
         para2=tracking
@@ -93,7 +93,7 @@ namespace robplayer {
 
     //% blockId="xx_folderPlay" block="xx_play the mp3 in the folder:%folderNum|filename:%fileNum|repeat:%myAns"
     //% weight=80 blockGap=20 folderNum.min=1 folderNum.max=99 fileNum.min=1 fileNum.max=255
-    export function folderPlay(folderNum:number, fileNum:number,myAns:yesOrNot):void{
+    export function xx_folderPlay(folderNum:number, fileNum:number,myAns:xx_yesOrNot):void{
         CMD=0x0F
         para1=folderNum
         para2=fileNum
@@ -108,7 +108,7 @@ namespace robplayer {
 
     //% blockId="xx_setLoop" block="xx_loop play all the MP3s in the SD card"
     //% weight=75 blockGap=20 
-    export function setLoop():void{
+    export function xx_setLoop():void{
         CMD=0x11
         para1=0
         para2=0x01
@@ -121,7 +121,7 @@ namespace robplayer {
 
     //% blockId="xx_setLoopFolder" block="xx_loop play all the MP3s in the folder:%folderNum"
     //% weight=73 blockGap=20 folderNum.min=1 folderNum.max=99
-    export function setLoopFolder(folderNum:number):void{
+    export function xx_setLoopFolder(folderNum:number):void{
         CMD=0x17
         para1=0
         para2=folderNum
@@ -135,7 +135,7 @@ namespace robplayer {
 
     //% blockId="xx_setVolume" block="xx_set volume(0~48):%volume"
     //% weight=70 blockGap=20 volume.min=0 volume.max=48
-    export function setVolume(volume:number):void{
+    export function xx_setVolume(volume:number):void{
         CMD=0x06
         para1=0
         para2=volume
