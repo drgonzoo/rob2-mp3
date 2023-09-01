@@ -85,9 +85,9 @@ namespace robplayer {
         dataArr[6] = para2
         checkSum()
         sendData()
-        execute(0x0D)
+        xx_execute(0x0D)
         if (myAns==1)
-           execute(0x19)
+           xx_execute(0x19)
     }
 
 
@@ -103,7 +103,7 @@ namespace robplayer {
         checkSum()
         sendData()
         if (myAns==1)
-           execute(0x19)
+           xx_execute(0x19)
     }
 
     //% blockId="xx_setLoop" block="xx_loop play all the MP3s in the SD card"
