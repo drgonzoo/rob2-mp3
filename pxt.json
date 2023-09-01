@@ -1,7 +1,7 @@
 {
-    "name": "dfplayer",
+    "name": "robplayer",
     "version": "0.0.3",
-    "description": "DFPlayer mini and Serialmp3 Extension for Makecode",
+    "description": "robb",
     "license": "MIT",
     "dependencies": {
         "core": "*"
