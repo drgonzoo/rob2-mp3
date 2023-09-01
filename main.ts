@@ -1,10 +1,10 @@
 /**
-* DFPlayer mini的函數
+* robplayer
 */
 
 
-//% weight=0 color=#b9a0e6 icon="\uf001" block="MP3 Player"
-namespace dfplayer {
+//% weight=0 color=#b9a0e6 icon="\uf001" block="xx_MP3 Player"
+namespace robplayer {
     serial.onDataReceived("E", () => {
     })
     let Start_Byte = 0x7E
@@ -20,28 +20,28 @@ namespace dfplayer {
     let dataArr: number[] = [Start_Byte, Version_Byte, Command_Length, CMD, Acknowledge, para1, para2, highByte, lowByte, End_Byte]
 
     export enum playType {
-        //% block="Play"
+        //% block="xx_Play"
         type1 = 0x0D,
-        //% block="Stop"
+        //% block="xx_Stop"
         type2 = 0x16,
-        //% block="PlayNext"
+        //% block="xx_PlayNext"
         type3 = 0x01,
-        //% block="PlayPrevious"
+        //% block="xx_PlayPrevious"
         type4 = 0x02,
-        //% block="Pause"
+        //% block="xx_Pause"
         type5 = 0x0E
     }
 
     export enum yesOrNot {
-        //% block="no"
+        //% block="xx_no"
         type1 = 0,
-        //% block="yes"
+        //% block="xx_yes"
         type2 = 1
     }
 
-    //% blockId="MP3_setSerial" block="set DFPlayer mini RX to %pinRX|TX to %pinTX"
+    //% blockId="xx_MP3_setSerial" block="xx_set robplayer mini RX to %pinRX|TX to %pinTX"
     //% weight=100 blockGap=20
-    export function MP3_setSerial(pinRX: SerialPin, pinTX: SerialPin): void {
+    export function xx_MP3_setSerial(pinRX: SerialPin, pinTX: SerialPin): void {
         serial.redirect(
             pinRX,
             pinTX,
@@ -61,7 +61,7 @@ namespace dfplayer {
         dataArr[7]=highByte
         dataArr[8]=lowByte
     }
-    //% blockId="execute" block="execute procedure:%myType"
+    //% blockId="xx_execute" block="xx_execute procedure:%myType"
     //% weight=90 blockExternalInputs=true blockGap=20
     export function execute(myType: playType):void{
         CMD=myType
@@ -74,7 +74,7 @@ namespace dfplayer {
         sendData()
     }
 
-    //% blockId="setTracking" block="play the mp3 on the track:%tracking|repeat:%myAns"
+    //% blockId="xx_setTracking" block="xx_play the mp3 on the track:%tracking|repeat:%myAns"
     //% weight=85 blockGap=20 tracking.min=1 tracking.max=255
     export function setTracking(tracking:number,myAns:yesOrNot):void{
         CMD=0x03
@@ -91,7 +91,7 @@ namespace dfplayer {
     }
 
 
-    //% blockId="folderPlay" block="play the mp3 in the folder:%folderNum|filename:%fileNum|repeat:%myAns"
+    //% blockId="xx_folderPlay" block="xx_play the mp3 in the folder:%folderNum|filename:%fileNum|repeat:%myAns"
     //% weight=80 blockGap=20 folderNum.min=1 folderNum.max=99 fileNum.min=1 fileNum.max=255
     export function folderPlay(folderNum:number, fileNum:number,myAns:yesOrNot):void{
         CMD=0x0F
@@ -106,7 +106,7 @@ namespace dfplayer {
            execute(0x19)
     }
 
-    //% blockId="setLoop" block="loop play all the MP3s in the SD card"
+    //% blockId="xx_setLoop" block="xx_loop play all the MP3s in the SD card"
     //% weight=75 blockGap=20 
     export function setLoop():void{
         CMD=0x11
@@ -119,7 +119,7 @@ namespace dfplayer {
         sendData()
     }
 
-    //% blockId="setLoopFolder" block="loop play all the MP3s in the folder:%folderNum"
+    //% blockId="xx_setLoopFolder" block="xx_loop play all the MP3s in the folder:%folderNum"
     //% weight=73 blockGap=20 folderNum.min=1 folderNum.max=99
     export function setLoopFolder(folderNum:number):void{
         CMD=0x17
@@ -133,7 +133,7 @@ namespace dfplayer {
     }
 
 
-    //% blockId="setVolume" block="set volume(0~48):%volume"
+    //% blockId="xx_setVolume" block="xx_set volume(0~48):%volume"
     //% weight=70 blockGap=20 volume.min=0 volume.max=48
     export function setVolume(volume:number):void{
         CMD=0x06
