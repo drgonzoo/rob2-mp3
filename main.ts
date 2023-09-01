@@ -61,10 +61,10 @@ namespace robplayer {
         dataArr[7]=highByte
         dataArr[8]=lowByte
     }
-    //% blockId="xx_execute" block="xx_execute procedure:%myType"
+    //% blockId="xx_execute" block="xx_execute procedure:%xx_myType"
     //% weight=90 blockExternalInputs=true blockGap=20
-    export function xx_execute(myType: xx_playType):void{
-        CMD=myType
+    export function xx_execute(xx_myType: xx_playType):void{
+        CMD=xx_myType
         para1=0x00
         para2=0x00
         dataArr[3]=CMD
